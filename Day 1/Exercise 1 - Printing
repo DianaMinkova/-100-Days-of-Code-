@@ -1,7 +1,0 @@
-#First solution:
-print('Day 1 - Python Print Function')
-print('The function is declared like this:')
-print('print("Hello Python")')
-
-#Second solution:
-print('Day 1 - Python Print Function\nThe function is declared like this:\nprint("Hello Python")')
