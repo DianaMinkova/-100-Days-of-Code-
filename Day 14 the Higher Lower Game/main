@@ -4,10 +4,12 @@ from game_data import data
 
 
 def get_random_account():
+    """Get data from random account"""
     return sample(data, 2)
 
 
 def format_data(account):
+    """Format account into printable format: name, description and country"""
     name = account['name']
     description = account['description']
     country = account['country']
@@ -15,6 +17,9 @@ def format_data(account):
 
 
 def check_answer(follower_guess, follower_a, follower_b):
+    """Checks followers against user\'s guess and returns
+       True if they got it right,
+       or False if they got it wrong."""
     if follower_a['follower_count'] > follower_b['follower_count']:
         return follower_guess == 'a'
     else:
