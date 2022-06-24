@@ -24,7 +24,7 @@ screen.onkey(l_paddle.go_down, 's')
 
 game_is_on = True
 while game_is_on:
-    time.sleep(ball.move_speed)                      # Slowing down between each of the update.
+    time.sleep(ball.move_speed)          # Slowing down between each of the update.
     screen.update()                      # It allows only a portion of the screen to update.
     ball.move()
 
