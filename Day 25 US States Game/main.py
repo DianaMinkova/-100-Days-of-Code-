@@ -30,10 +30,12 @@ while len(guessed_state) <= 50:  # It is value in state
 
     if answer_state in state_list:
         guessed_state.append(answer_state)
-        coordinate = data[data.state == answer_state]
+        find_state = data[data.state == answer_state]  # find row data for state (name and coordinate: x, y)
+        #print(coordinate = data[data.state == answer_state])
         # x = coordinate['x'].values[0]
         # y = coordinate['y'].values[0]
         # print(x, y)
         # t.goto(x, y)
-        t.goto(int(coordinate.x), int(coordinate.y))
-        t.write(answer_state)
+        t.goto(int(find_state.x), int(find_state.y)) # get position to the state
+        t.write(answer_state)  # to write name of the state
+
