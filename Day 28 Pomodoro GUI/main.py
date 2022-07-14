@@ -62,7 +62,7 @@ def count_down(count):
         work_session = floor(reps/2)
         for _ in range(work_session):
             marks += '✔'
-            check_mark_label['text'] = marks
+        check_mark_label['text'] = marks
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -85,7 +85,7 @@ canvas.grid(column=1, row=1)
 start_btn = Button(text='Start', command=start_timer, font=FONT_NAME, borderwidth=0, highlightthickness=0)
 start_btn.grid(column=0, row=2)
 
-reset_btn = Button(text='Reset', font=FONT_NAME, borderwidth=0, highlightthickness=0)
+reset_btn = Button(text='Reset', font=FONT_NAME, borderwidth=0, highlightthickness=0, command=reset_timer)
 reset_btn.grid(column=2, row=2)
 
 
