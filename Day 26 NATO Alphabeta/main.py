@@ -6,13 +6,30 @@ date = read_csv('nato_phonetic_alphabet.csv')  # Reade data file letter,code 1ro
 data_dict = {row.letter: row.code for (index, row) in date.iterrows()}  # Convert date to dictionary
 #print(data_dict)  # {'A': 'Alfa', 'B': 'Bravo',.....}
 
-run_again = True
-while run_again:
+# run_again = True
+# while run_again:
+#     word = input('Enter a word: ').upper()
+#     # nested for loop with List Comprehension:
+#     # result = [code for let in word for letter, code in data_dict.items() if let == letter]
+#     # print(result)  # ['Whiskey', 'Oscar', 'Romeo', 'Delta']
+
+#     output_list = [data_dict[letter] for letter in word ]   # Reading element of a dict/list using same element (data_dict[letter])
+#     print(output_list)  # ['Whiskey', 'Oscar', 'Romeo', 'Delta']
+
+def generate_phonetic():
     word = input('Enter a word: ').upper()
     # nested for loop with List Comprehension:
     # result = [code for let in word for letter, code in data_dict.items() if let == letter]
     # print(result)  # ['Whiskey', 'Oscar', 'Romeo', 'Delta']
+    try:
+        output_list = [data_dict[letter] for letter in word ]   # Reading element of a dict/list using same element (data_dict[letter])
 
-    output_list = [data_dict[letter] for letter in word ]   # Reading element of a dict/list using same element (data_dict[letter])
-    print(output_list)  # ['Whiskey', 'Oscar', 'Romeo', 'Delta']
+    except KeyError:
+        print('Sorry, only letters in the alphabet please.')
+        generate_phonetic()
 
+    else:
+        print(output_list)  # ['Whiskey', 'Oscar', 'Romeo', 'Delta']
+
+
+generate_phonetic()
